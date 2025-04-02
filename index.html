@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio - Sanjeet Biswas</title>
+    <title>Sanjeet Biswas's Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -247,11 +247,18 @@ li::marker {
   color: teal;
 }
 .ul-inline {
-  li::marker {
-    gap: 0;
-  }
     display: flex;
     gap: 30px;
+}
+@media (max-width: 768px) {
+  .ul-inline {
+    display: inline-table;
+}
+}
+@media (max-width: 420px) {
+  .ul-inline {
+    display: inline-table;
+}
 }
 </style>
 </html>
