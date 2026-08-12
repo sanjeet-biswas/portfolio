@@ -372,6 +372,20 @@
       border-color: rgba(34, 211, 238, 0.35);
       background: rgba(34, 211, 238, 0.07);
     }
+    .skill-tag.skill-level {
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-tag.skill-level::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: var(--level);
+      height: 2px;
+      background: var(--accent-grad);
+      box-shadow: 0 0 8px rgba(34, 211, 238, 0.35);
+    }
 
     /* ---------- Timeline / experience ---------- */
     .exp { position: relative; padding-left: 30px; margin-bottom: 28px; }
@@ -578,20 +592,20 @@
 
           <div class="side-title"><i class="fa-solid fa-bolt"></i> Core Skills</div>
           <div class="skill-list">
-            <span class="skill-tag">Java 8+</span>
-            <span class="skill-tag">Spring Boot</span>
-            <span class="skill-tag">Angular 2</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">LESS / CSS</span>
-            <span class="skill-tag">JavaFX</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">Oracle</span>
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">SQLite</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">Kafka</span>
-            <span class="skill-tag">RabbitMQ</span>
+            <span class="skill-tag skill-level" style="--level: 92%;">Java 8+</span>
+            <span class="skill-tag skill-level" style="--level: 75%;">Spring Boot</span>
+            <span class="skill-tag skill-level" style="--level: 60%;">Angular 2</span>
+            <span class="skill-tag skill-level" style="--level: 60%;">TypeScript</span>
+            <span class="skill-tag skill-level" style="--level: 40%;">LESS / CSS</span>
+            <span class="skill-tag skill-level" style="--level: 50%;">JavaFX</span>
+            <span class="skill-tag skill-level" style="--level: 75%;">PostgreSQL</span>
+            <span class="skill-tag skill-level" style="--level: 75%;">Oracle</span>
+            <span class="skill-tag skill-level" style="--level: 75%;">MongoDB</span>
+            <span class="skill-tag skill-level" style="--level: 75%;">SQLite</span>
+            <span class="skill-tag skill-level" style="--level: 30%;">Docker</span>
+            <span class="skill-tag skill-level" style="--level: 30%;">Kubernetes</span>
+            <span class="skill-tag skill-level" style="--level: 40%;">Kafka</span>
+            <span class="skill-tag skill-level" style="--level: 40%;">RabbitMQ</span>
           </div>
 
           <div class="divider"></div>
