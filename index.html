@@ -1,327 +1,839 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Sanjeet Biswas's Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-    </style>
-  </head>
-<body class="w3-light-grey">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sanjeet Biswas — Software Developer</title>
+  <meta name="description" content="Sanjeet Biswas — Senior Software Developer specializing in Java, Spring Boot, Angular and scalable web portals.">
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-  
-    <!-- Left Column -->
-    <div class="w3-third">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="profile_pic.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <span class="w3-tag w3-light-grey w3-opacity w3-round"><h2><b>Sanjeet Biswas</b></h2></span>
-          </div>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Software Developer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Bangalore, karnataka, India</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>sanjeetbiswas1995@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+91 7842994836</p>
-          <hr>
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-2: #0a0d16;
+      --panel: rgba(18, 22, 34, 0.55);
+      --panel-border: rgba(120, 160, 255, 0.14);
+      --text: #e7ecf5;
+      --muted: #9aa6bd;
+      --faint: #6b7688;
+      --cyan: #22d3ee;
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --accent-grad: linear-gradient(120deg, #22d3ee 0%, #8b5cf6 55%, #ec4899 100%);
+      --glow: 0 0 40px rgba(34, 211, 238, 0.18);
+      --radius: 18px;
+      --maxw: 1200px;
+    }
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Java 8+</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:92%"></div>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Animated futuristic background */
+    .bg-fx {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(60vw 60vw at 12% 8%, rgba(34, 211, 238, 0.16), transparent 60%),
+        radial-gradient(55vw 55vw at 88% 18%, rgba(139, 92, 246, 0.18), transparent 60%),
+        radial-gradient(60vw 60vw at 50% 100%, rgba(236, 72, 153, 0.12), transparent 60%),
+        var(--bg);
+    }
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(120, 160, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 160, 255, 0.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 100%);
+      animation: gridDrift 24s linear infinite;
+    }
+    @keyframes gridDrift {
+      from { background-position: 0 0, 0 0; }
+      to   { background-position: 48px 48px, 48px 48px; }
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    ::selection { background: rgba(139, 92, 246, 0.4); color: #fff; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #05060a; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#22d3ee, #8b5cf6); border-radius: 20px; }
+
+    /* ---------- Navbar ---------- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 6, 10, 0.6);
+      border-bottom: 1px solid var(--panel-border);
+    }
+    .nav-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-family: "Orbitron", sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.05rem;
+    }
+    .brand .dot { color: var(--cyan); }
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.25s;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -6px;
+      width: 0; height: 2px;
+      background: var(--accent-grad);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-toggle { display: none; background: none; border: 0; color: var(--text); font-size: 1.4rem; cursor: pointer; }
+
+    /* ---------- Layout ---------- */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: 90px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      border: 1px solid var(--panel-border);
+      background: var(--panel);
+      padding: 7px 16px;
+      border-radius: 100px;
+      backdrop-filter: blur(8px);
+    }
+    .hero .pulse {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+      70%  { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.6rem, 7vw, 5.2rem);
+      line-height: 1.02;
+      margin: 26px 0 10px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    .hero h1 .grad {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero .role {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--muted);
+      min-height: 1.6em;
+    }
+    .hero .role .cursor { color: var(--cyan); animation: blink 1s steps(2) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hero p.lead {
+      max-width: 640px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+    .cta {
+      margin-top: 34px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 24px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--accent-grad);
+      color: #05060a;
+      box-shadow: var(--glow);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 40px rgba(139, 92, 246, 0.45); }
+    .btn-ghost {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      color: var(--text);
+      backdrop-filter: blur(8px);
+    }
+    .btn-ghost:hover { transform: translateY(-3px); border-color: var(--cyan); color: var(--cyan); }
+
+    .hero-stats {
+      margin-top: 54px;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat b {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2rem;
+      background: var(--accent-grad);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat span { color: var(--faint); font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ---------- Section shells ---------- */
+    section { padding: 60px 0; }
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .section-head .idx {
+      font-family: "Orbitron", sans-serif;
+      color: var(--cyan);
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    .section-head h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .section-head .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--panel-border), transparent);
+    }
+
+    .grid-2 { display: grid; grid-template-columns: 340px 1fr; gap: 30px; align-items: start; }
+
+    /* ---------- Glass card ---------- */
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(34,211,238,0.5), transparent 40%, transparent 60%, rgba(139,92,246,0.5));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,0,0,0.4); }
+    .card:hover::before { opacity: 1; }
+
+    /* ---------- Sidebar profile ---------- */
+    .profile { text-align: center; position: sticky; top: 90px; }
+    .avatar {
+      width: 150px; height: 150px;
+      margin: 4px auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #05060a;
+      background: var(--accent-grad);
+      position: relative;
+      box-shadow: var(--glow);
+      overflow: hidden;
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar::after {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      background: var(--accent-grad) border-box;
+      -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+      mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .profile h3 { font-family: "Space Grotesk", sans-serif; margin: 0; font-size: 1.4rem; }
+    .profile .tag { color: var(--cyan); font-size: 0.9rem; margin-top: 4px; }
+
+    .contact-list { margin: 22px 0 0; text-align: left; }
+    .contact-list a, .contact-list p {
+      display: flex; align-items: center; gap: 12px;
+      color: var(--muted); font-size: 0.9rem; margin: 12px 0;
+      transition: color 0.2s;
+    }
+    .contact-list a:hover { color: var(--cyan); }
+    .contact-list i {
+      width: 34px; height: 34px; flex: none;
+      display: grid; place-items: center;
+      border-radius: 10px;
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--cyan);
+      border: 1px solid var(--panel-border);
+    }
+
+    .divider { height: 1px; background: var(--panel-border); margin: 24px 0; }
+
+    .side-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text);
+      display: flex; align-items: center; gap: 10px;
+      margin: 0 0 16px;
+    }
+    .side-title i { color: var(--cyan); }
+
+    /* ---------- Skill bars ---------- */
+    .skill { margin-bottom: 15px; text-align: left; }
+    .skill .row { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px; color: var(--muted); }
+    .skill .track {
+      height: 7px; border-radius: 100px;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    .skill .fill {
+      height: 100%; width: 0;
+      border-radius: 100px;
+      background: var(--accent-grad);
+      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+    }
+
+    /* ---------- Timeline / experience ---------- */
+    .exp { position: relative; padding-left: 30px; margin-bottom: 28px; }
+    .exp:last-child { margin-bottom: 0; }
+    .exp::before {
+      content: ""; position: absolute; left: 5px; top: 8px; bottom: -28px;
+      width: 2px; background: linear-gradient(var(--cyan), transparent);
+    }
+    .exp:last-child::before { display: none; }
+    .exp .node {
+      position: absolute; left: 0; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15);
+    }
+    .exp h4 { font-family: "Space Grotesk", sans-serif; margin: 0 0 4px; font-size: 1.1rem; color: var(--text); }
+    .exp .meta { color: var(--cyan); font-size: 0.85rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .exp p { color: var(--muted); font-size: 0.94rem; margin: 8px 0; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: rgba(34, 197, 94, 0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .sub { margin: 14px 0 6px; font-weight: 600; color: var(--text); font-size: 0.9rem; }
+    .sub i { color: var(--violet); margin-right: 8px; }
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li {
+      position: relative; padding-left: 20px; margin: 6px 0;
+      color: var(--muted); font-size: 0.9rem;
+    }
+    ul.clean li::before {
+      content: ""; position: absolute; left: 2px; top: 10px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent-grad);
+    }
+
+    /* Tech chips */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .chip {
+      font-size: 0.78rem;
+      padding: 5px 13px;
+      border-radius: 100px;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      color: #c4b5fd;
+      transition: all 0.2s;
+    }
+    .chip:hover { background: rgba(139, 92, 246, 0.22); color: #fff; transform: translateY(-2px); }
+
+    /* ---------- Project / R&D cards grid ---------- */
+    .stack { display: grid; gap: 20px; }
+    .item h4 {
+      font-family: "Space Grotesk", sans-serif;
+      margin: 0 0 6px; font-size: 1.05rem; color: var(--text);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .item h4 i { color: var(--cyan); font-size: 0.9rem; }
+    .item + .item { margin-top: 22px; padding-top: 22px; border-top: 1px dashed var(--panel-border); }
+    .item p { color: var(--muted); font-size: 0.92rem; margin: 6px 0; }
+    .pill-head {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--cyan);
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid var(--panel-border);
+      padding: 6px 14px; border-radius: 100px;
+      margin-bottom: 18px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid var(--panel-border);
+      padding: 50px 24px 60px;
+      text-align: center;
+      background: rgba(5, 6, 10, 0.5);
+    }
+    footer h3 { font-family: "Space Grotesk", sans-serif; font-size: 1.6rem; margin: 0 0 8px; }
+    footer p { color: var(--muted); margin: 0 0 24px; }
+    .socials { display: flex; gap: 14px; justify-content: center; }
+    .socials a {
+      width: 46px; height: 46px;
+      display: grid; place-items: center;
+      border-radius: 12px;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: all 0.25s;
+    }
+    .socials a:hover { color: var(--cyan); border-color: var(--cyan); transform: translateY(-4px); box-shadow: var(--glow); }
+    .copyright { margin-top: 30px; color: var(--faint); font-size: 0.82rem; }
+
+    /* ---------- Reveal animation ---------- */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+
+    /* Scroll progress bar */
+    .progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0;
+      background: var(--accent-grad); z-index: 60;
+      box-shadow: 0 0 10px var(--cyan);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .profile { position: static; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column; gap: 18px;
+        position: absolute; top: 60px; right: 16px; left: 16px;
+        background: rgba(10, 13, 22, 0.96);
+        border: 1px solid var(--panel-border);
+        border-radius: 14px; padding: 20px;
+        backdrop-filter: blur(14px);
+      }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 60px 0 40px; }
+      .hero-stats { gap: 26px; }
+      .card { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-fx"></div>
+  <div class="bg-grid"></div>
+  <div class="progress" id="progress"></div>
+
+  <!-- Navbar -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">SB<span class="dot">.</span></div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#rnd">R&amp;D</a>
+        <a href="#hackathons">Hackathons</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero wrap">
+    <span class="eyebrow"><span class="pulse"></span> Available for opportunities</span>
+    <h1>Sanjeet <span class="grad">Biswas</span></h1>
+    <div class="role"><span id="typed"></span><span class="cursor">|</span></div>
+    <p class="lead">Portal Development Lead building scalable, secure web platforms for global telecom & fintech products — from architecture and PoCs to performance tuning and delivery.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="mailto:sanjeetbiswas1995@gmail.com"><i class="fa-solid fa-paper-plane"></i> Get in touch</a>
+      <a class="btn btn-ghost" href="#experience"><i class="fa-solid fa-arrow-down"></i> Explore work</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>8+</b><span>Years Experience</span></div>
+      <div class="stat"><b>3</b><span>Global Clients</span></div>
+      <div class="stat"><b>10+</b><span>Projects &amp; PoCs</span></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- About + Skills sidebar / Experience -->
+    <section id="about">
+      <div class="section-head reveal">
+        <span class="idx">01</span>
+        <h2>About &amp; Skills</h2>
+        <span class="line"></span>
+      </div>
+
+      <div class="grid-2">
+        <!-- Sidebar -->
+        <aside class="card profile reveal">
+          <div class="avatar">
+            <img src="profile_pic.jpg" alt="Sanjeet Biswas" onerror="this.style.display='none';this.parentNode.insertAdjacentText('beforeend','SB');">
           </div>
-          <p>Spring Boot</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:75%"></div>
+          <h3>Sanjeet Biswas</h3>
+          <div class="tag">Senior Software Developer</div>
+
+          <div class="contact-list">
+            <p><i class="fa-solid fa-briefcase"></i> Software Developer</p>
+            <p><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</p>
+            <a href="mailto:sanjeetbiswas1995@gmail.com"><i class="fa-solid fa-envelope"></i> sanjeetbiswas1995@gmail.com</a>
+            <a href="tel:+917842994836"><i class="fa-solid fa-phone"></i> +91 78429 94836</a>
           </div>
-          <p>Angular 2 . TypeScript</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:60%">
-              <div class="w3-center w3-text-white"></div>
+
+          <div class="divider"></div>
+
+          <div class="side-title"><i class="fa-solid fa-bolt"></i> Core Skills</div>
+          <div data-skills>
+            <div class="skill"><div class="row"><span>Java 8+</span><span>92%</span></div><div class="track"><div class="fill" data-w="92"></div></div></div>
+            <div class="skill"><div class="row"><span>Spring Boot</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
+            <div class="skill"><div class="row"><span>Angular 2 · TypeScript</span><span>60%</span></div><div class="track"><div class="fill" data-w="60"></div></div></div>
+            <div class="skill"><div class="row"><span>Styling · LESS/CSS</span><span>40%</span></div><div class="track"><div class="fill" data-w="40"></div></div></div>
+            <div class="skill"><div class="row"><span>JavaFX</span><span>50%</span></div><div class="track"><div class="fill" data-w="50"></div></div></div>
+            <div class="skill"><div class="row"><span>SQLite · PostgreSQL · Oracle · MongoDB</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
+            <div class="skill"><div class="row"><span>Docker · Kubernetes</span><span>30%</span></div><div class="track"><div class="fill" data-w="30"></div></div></div>
+            <div class="skill"><div class="row"><span>Kafka · RabbitMQ</span><span>40%</span></div><div class="track"><div class="fill" data-w="40"></div></div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="side-title"><i class="fa-solid fa-seedling"></i> Currently Learning</div>
+          <div data-skills>
+            <div class="skill"><div class="row"><span>Django · Python</span><span>20%</span></div><div class="track"><div class="fill" data-w="20"></div></div></div>
+            <div class="skill"><div class="row"><span>Flutter · Dart · Firebase</span><span>5%</span></div><div class="track"><div class="fill" data-w="5"></div></div></div>
+            <div class="skill"><div class="row"><span>Flowise AI · render.com</span><span>2%</span></div><div class="track"><div class="fill" data-w="2"></div></div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="side-title"><i class="fa-solid fa-language"></i> Languages</div>
+          <div data-skills>
+            <div class="skill"><div class="row"><span>English</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
+            <div class="skill"><div class="row"><span>Hindi</span><span>80%</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+          </div>
+        </aside>
+
+        <!-- Experience -->
+        <div id="experience">
+          <div class="card reveal">
+            <span class="pill-head"><i class="fa-solid fa-suitcase"></i> Work Experience</span>
+
+            <div class="exp">
+              <span class="node"></span>
+              <h4>Senior Software Developer @ Netcracker Technology</h4>
+              <div class="meta"><i class="fa-regular fa-calendar"></i> June 2022 – <span class="badge">Current</span></div>
+              <p>Portal Development Lead at a telecom product company with expertise in Java 8+ and solid working knowledge of Angular 2. Recently worked with the Liferay Framework, PostgreSQL and Wildfly Server. Skilled in designing and developing scalable web portals with a strong background in troubleshooting, performance optimization and deployment — passionate about delivering high-quality, secure and efficient applications.</p>
+
+              <div class="sub"><i class="fa-solid fa-user-tie"></i>Client</div>
+              <ul class="clean"><li>Rakuten Group, Inc. — a Japanese technology conglomerate based in Tokyo.</li></ul>
+
+              <div class="sub"><i class="fa-solid fa-diagram-project"></i>Projects</div>
+              <ul class="clean">
+                <li>'Self-Service Portal' for e-commerce purchases.</li>
+                <li>'Ecare' for dashboard management.</li>
+                <li>'POS' portal for shop representatives.</li>
+              </ul>
+
+              <div class="sub"><i class="fa-solid fa-list-check"></i>Responsibilities</div>
+              <ul class="clean">
+                <li>New requirement analysis, feasibility checks, PoCs and estimations.</li>
+                <li>Brainstorming and solution alignment with cross-component teams and Solution Architects.</li>
+                <li>Change Request design reviews with BA.</li>
+                <li>Major Change Request implementation and dev testing.</li>
+                <li>Defect tracking, assignment, troubleshooting and fixes.</li>
+                <li>Managing the portal dev team; assigning defects and requirements.</li>
+                <li>Handling Managed Services (MS) issues.</li>
+                <li>Load-testing report analysis and optimization.</li>
+                <li>Delivery planning.</li>
+              </ul>
+
+              <div class="sub"><i class="fa-solid fa-shield-halved"></i>Security Risk Mitigation</div>
+              <ul class="clean">
+                <li>Cookie signing for secure session management.</li>
+                <li>API request signing to prevent tampering and replay attacks.</li>
+              </ul>
+
+              <div class="chips">
+                <span class="chip">Java 8+</span><span class="chip">Angular 2</span><span class="chip">Liferay 7.4.3</span><span class="chip">Wildfly 23</span><span class="chip">PostgreSQL</span>
+              </div>
+            </div>
+
+            <div class="exp">
+              <span class="node"></span>
+              <h4>Software Developer @ IBM India Pvt. Ltd.</h4>
+              <div class="meta"><i class="fa-regular fa-calendar"></i> Mar 2017 – May 2022</div>
+              <p>Worked as a Java Developer at IBM India Pvt. Ltd. for 5 years, starting as a fresher. It gave me the platform to learn and gain hands-on working experience with Java and practical implementation.</p>
+
+              <div class="sub"><i class="fa-solid fa-user-tie"></i>Client</div>
+              <ul class="clean"><li>Federal Public Service Finance, Belgium.</li></ul>
+
+              <div class="sub"><i class="fa-solid fa-diagram-project"></i>Project</div>
+              <ul class="clean"><li>EMCS — Excise Movement Control System.</li></ul>
+
+              <div class="chips">
+                <span class="chip">Core Java</span><span class="chip">DDL · DML · TCL</span><span class="chip">Oracle WebLogic</span><span class="chip">Oracle</span><span class="chip">IBM DB2</span><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">JPA · Hibernate</span><span class="chip">JSP</span><span class="chip">JAX-B · SAX · STAX · DOM</span><span class="chip">JAX-WS · SOAP</span><span class="chip">RESTful API</span><span class="chip">SOAP UI</span><span class="chip">WinSCP · Putty</span><span class="chip">Log4j</span>
+              </div>
             </div>
           </div>
-          <p>Styling - LESS/CSS</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:40%"></div>
-          </div>
-          <p>JavaFx</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:50%"></div>
-          </div>
-          <p>SQLite . PostgreSQL . Oracle DB . MongoDB</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:75%"></div>
-          </div>
-
-          <p>Docker . Kubernetes</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:30%"></div>
-          </div>
-
-          <p>Kafka . RabbitMQ</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:40%"></div>
-          </div>
-          <br>
-
-          <hr>
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Learnings</b></p>
-          <p>Django . Python</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:20%"></div>
-          </div>
-          <br>
-
-          <p>Flutter . Dart . Firebase</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:5%"></div>
-          </div>
-          <br>
-
-          <p>Flowise AI . render.com </p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:2%"></div>
-          </div>
-          <br>
-
-          <hr>
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:90%"></div>
-          </div>
-          <p>Hindi</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:12px;width:80%"></div>
-          </div>
-          <br>
         </div>
-      </div><br>
+      </div>
+    </section>
 
-    <!-- End Left Column -->
+    <!-- R&D -->
+    <section id="rnd">
+      <div class="section-head reveal">
+        <span class="idx">02</span>
+        <h2>R&amp;D · Innovations · PoCs</h2>
+        <span class="line"></span>
+      </div>
+      <div class="card reveal">
+        <span class="pill-head"><i class="fa-solid fa-flask"></i> Netcracker Technology — Rakuten Project</span>
+        <div class="stack">
+          <div class="item">
+            <h4><i class="fa-solid fa-key"></i> Single Sign-On between Netcracker &amp; Rakuten e-commerce Portal</h4>
+            <p>SSO enables seamless user access with a single login. This integration improves security, enhances user experience and eliminates the need for multiple credentials, using secure token-based authentication and session management.</p>
+            <p>Implemented Multi-Factor Authentication for secure flows.</p>
+            <div class="chips"><span class="chip">SSO Token/Cookie</span><span class="chip">OTP via Phone/Email</span></div>
+          </div>
+          <div class="item">
+            <h4><i class="fa-solid fa-link"></i> Universal Links for Android / iOS Devices</h4>
+            <p>Universal Links let apps open specific web links directly in the native app instead of a browser, providing a seamless experience — opening the Rakuten Mobile App if installed, otherwise falling back to the default browser.</p>
+            <div class="chips"><span class="chip">Java Filters</span><span class="chip">AASA File (AppID × Portal URL)</span></div>
+          </div>
+          <div class="item">
+            <h4><i class="fa-solid fa-layer-group"></i> CMS (Portal &amp; Mobile App)</h4>
+            <p>PoC for a Content Management System handling email templates, SMS templates, localizations and carousels within a single system.</p>
+            <div class="chips"><span class="chip">Kafka Topics</span><span class="chip">Liferay Web Content</span><span class="chip">PostgreSQL</span><span class="chip">RESTful API</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hackathons -->
+    <section id="hackathons">
+      <div class="section-head reveal">
+        <span class="idx">03</span>
+        <h2>Hackathons &amp; Competitions</h2>
+        <span class="line"></span>
+      </div>
+      <div class="card reveal">
+        <span class="pill-head"><i class="fa-solid fa-trophy"></i> AI Hackathon @ Netcracker Technology</span>
+        <div class="stack">
+          <div class="item">
+            <h4><i class="fa-brands fa-whatsapp"></i> Chatbot — WhatsApp-based e-commerce onboarding</h4>
+            <p>A seamless e-commerce onboarding system using Meta Webhooks to automate customer registration, order processing and support via WhatsApp. It lets businesses onboard users effortlessly, provide real-time updates and enhance engagement.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">Meta Webhook</span><span class="chip">ML customer profiling</span></div>
+          </div>
+          <div class="item">
+            <h4><i class="fa-solid fa-square-parking"></i> Parking Allotment System — AI/ML + Meta Webhook</h4>
+            <p>An intelligent Parking Allotment System leveraging AI/ML for real-time space availability prediction and Meta Webhooks for instant notifications. It optimizes allocation, reduces wait times and enhances the experience through automated updates.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">ML Tool</span><span class="chip">Angular 2</span><span class="chip">Ultrasonic Sensor</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-head reveal">
+        <span class="idx">04</span>
+        <h2>Personal / Independent Projects</h2>
+        <span class="line"></span>
+      </div>
+      <div class="card reveal">
+        <span class="pill-head"><i class="fa-solid fa-boxes-stacked"></i> Inventory Management System</span>
+        <div class="stack">
+          <div class="item">
+            <h4><i class="fa-solid fa-barcode"></i> Electronic Goods Stock Management — Barcode Reader</h4>
+            <p>Developed an Inventory Management System using JavaFX, integrating a barcode reader for efficient stock tracking, order placement and billing.</p>
+            <div class="chips"><span class="chip">Java</span><span class="chip">JavaFX</span><span class="chip">SQLite/MySQL</span><span class="chip">Barcode Scanner</span></div>
+          </div>
+          <div class="item">
+            <h4><i class="fa-solid fa-arrows-rotate"></i> JavaFX → Flutter Migration</h4>
+            <p>Migrating an existing Inventory Management System originally built in JavaFX to a Flutter-based cross-platform solution.</p>
+            <div class="chips"><span class="chip">Java</span><span class="chip">Flutter</span><span class="chip">SQLite/MySQL</span><span class="chip">Dart</span><span class="chip">Firebase</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="section-head reveal">
+        <span class="idx">05</span>
+        <h2>Education</h2>
+        <span class="line"></span>
+      </div>
+      <div class="card reveal">
+        <div class="exp">
+          <span class="node"></span>
+          <h4>Pondicherry University</h4>
+          <div class="meta"><i class="fa-regular fa-calendar"></i> 2012 – 2016</div>
+          <p>Bachelor's Degree — Electronics &amp; Communication Engineering.</p>
+        </div>
+        <div class="exp">
+          <span class="node"></span>
+          <h4>GMSSS, Aberdeen, Port Blair</h4>
+          <div class="meta"><i class="fa-regular fa-calendar"></i> 2010 – 2012</div>
+          <p>Higher Secondary School.</p>
+        </div>
+        <div class="exp">
+          <span class="node"></span>
+          <h4>GSSS Subhashgram, North Andaman</h4>
+          <div class="meta"><i class="fa-regular fa-calendar"></i> 2001 – 2010</div>
+          <p>Secondary School.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h3>Let's build something <span style="background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">futuristic</span>.</h3>
+    <p>Find me on social media or drop a message.</p>
+    <div class="socials">
+      <a href="mailto:sanjeetbiswas1995@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
     </div>
+    <div class="copyright">© <span id="year"></span> Sanjeet Biswas — Crafted with a passion for clean, secure code.</div>
+  </footer>
 
-    <!-- Right Column -->
-    <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Senior Software Developer @ Netcracker Technology</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2022 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Portal Development Lead in a telecom product based company (Netcracker Technology India Pvt. Ltd.) with expertise in Java 8+ , good working knowledge on Angular 2. Recenty worked with Liferay Framework, Postgresql DB and Wildfly Server. Skilled in designing and developing scalable web portals. Strong background in troubleshooting, performance optimization, and deployment. Passionate about delivering high-quality, secure, and efficient applications
-            .</p>
-            <ul><b>Client:</b>
-              <li>Rakuten Group, Inc. is a Japanese technology conglomerate based in Tokyo.</li>
-            </ul>
-            <ul><b>Project:</b>
-              <li>'Self-Service Portal' for ecommerce purchase.</li>
-              <li>'Ecare' for dashboard management.</li>
-              <li>'POS' portal for shops representive.</li>
-            </ul>
-          <ul><b>Responsibilities:</b>
-            <li>New requirement analysis, feasibility check, PoC and estimations.</li>
-            <li>Branstorming and solution alignment with Cross component and Solution Architect.</li>
-            <li>Change Request design review with BA.</li>
-            <li>Major Change Request implementation and dev testing.</li>
-            <li>Defect tracking, assignment, troubleshooting and fixes.</li>
-            <li>Manage portal dev team, assign defects and requirements.</li>
-            <li>Handle managed servces (MS) issues.</li>
-            <li>Load testing report analysis and optimization.</li>
-            <li>Delivery Planning.</li>
-          </ul>
-          <ul><b>Tech Stacks:</b>
-            <li>Java 8+</li>
-            <li>Angular 2</li>
-            <li>Liferay 7.4.3</li>
-            <li>Wildfly 23</li>
-            <li>PostgreSQL</li>
-          </ul>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Software Developer @ IBM India Pvt. Ltd.</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2017 - May 2022</h6>
-          <p>Worked as a Java Developer for IBM India Pvt. Ltd. for 5 years, since I started as a fresher developer. It provided me the platform to learn and get working experience on Java with practical exposure on implementation. </p>
-          <ul><b>Client:</b>
-            <li>Federal Public Service Finance, Belgium</li>
-          </ul>
-          <ul><b>Project:</b>
-            <li>EMCS - Excise Movement Control System</li>
-          </ul>
-        <ul><b>Tech Stacks:</b>
-          <li>Core Java</li>
-          <li> DDL, DML and TCL queries</li>
-          <li> Oracle WebLogic Server</li>
-          <li> Oracle, IBM DB2, Mongo DB, MySQL</li>
-          <li>Defect tracking, assignment, troubleshooting and fixes.</li>
-          <li> SOAP UI, WinSCP, Putty</li>
-          <li>JPA, Hibernate, JSP, JAX-B, SAX, STAX and DOM parsers.</li>
-          <li> JAX-WS, SOAP Services, RESTful API.</li>
-          <li>Log4j</li>
-        </ul>
-        </div>
-      </div>
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-search fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>R&D . Innovations . PoCs</h2>
-        <div class="w3-container">
-          <h6 class="w3-text-teal"><i ></i><span class="w3-tag w3-teal w3-round">Netcracker Technology</span> - <b>Rakuten Project</b></h6>
-          <h6 class="w3-text-teal"><i class="fa fa-circle fa-fw w3-margin-right"></i>Single Sign On between Netcracker & Rakuten e-commerce Portal</h6>
-          <p class="w3-margin-left">SSO enables seamless user access with a single login. This integration improves security, enhances user experience, and eliminates the need for multiple credentials. Used secure token-based authentication and session management.</p>
-          <p class="w3-margin-left">Implemented Multi-Factor Autehntication for secure flows.</p>
-          <b class="w3-margin-left">Tech stacks:</b>
-          <ul class="ul-inline">
-            <li>SSO Token/Cookie</li>
-            <li>OTP via Phone/Email</li>
-          </ul>
-          <hr>
-          <h6 class="w3-text-teal"><i class="fa fa-circle fa-fw w3-margin-right"></i>Universal Links Implementation for Android/iOS Devices</h6>
-          <p class="w3-margin-left">Universal Links allow apps to open specific web links directly in the native app instead of a browser, providing a seamless user experience.</p>
-          <p class="w3-margin-left">It will open Rakuten Mobile App directly if its installed otherwise fallback to default browser.</p>
-          <b class="w3-margin-left">Tech stacks:</b>
-          <ul class="ul-inline">
-            <li>Java Filters</li>
-            <li>AASA File (AppID x Portal url mapping)</li>
-          </ul>
-          <hr>
-          <h6 class="w3-text-teal"><i class="fa fa-circle fa-fw w3-margin-right"></i>CMS (Portal & Mobile App)</h6>
-          <p class="w3-margin-left">PoC for 'Content Management System' for handling email templates, sms templates, localizations, carousels in a single System.</p>
-          <b class="w3-margin-left">Tech stacks:</b>
-          <ul class="ul-inline">
-            <li>Kafka Topics</li>
-            <li>Liferay Web Content</li>
-            <li>PostgreSQL</li>
-            <li>RESTful API</li>
-          </ul>
-        </div>
-      </div>
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Hackathons & Competitions</h2>
-        <h6 class="w3-text-teal"><i class="fa fa-fw w3-margin-right"></i><span class="w3-tag w3-teal w3-round">AI Hackathon @Netcracker Technology</span></h6>
-        <div class="w3-container">
-          <h6 class="w3-text-teal"><i class="fa fa-circle fa-fw w3-margin-right"></i>Chatbot - WhatsApp based e-commerce onboarding <i class="fa fa-git-square fa-fw w3-margin-right w3-large"></i></h6>
-          <p class="w3-margin-left">A seamless e-commerce onboarding system using Meta Webhooks to automate customer registration, order processing, and support via WhatsApp. It enables businesses to onboard users effortlessly, provide real-time updates, and enhance user engagement.</p>
-          <b class="w3-margin-left">Tech stacks:</b>
-          <ul class="ul-inline">
-            <li>Python.</li>
-            <li>Django</li>
-            <li>Meta Webhook</li>
-            <li>ML Tool for customer profiling</li>
-          </ul>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h6 class="w3-text-teal"><i class="fa fa-circle fa-fw w3-margin-right"></i>Parking Allotment System - AI/ML + Meta Webhook <i class="fa fa-git-square fa-fw w3-margin-right w3-large"></i></h6>
-          <p class="w3-margin-left">An intelligent Parking Allotment System that leverages AI/ML for real-time space availability prediction and Meta Webhooks for instant user notifications. It optimizes parking allocation, reduces wait times, and enhances overall user experience through automated updates.</p>
-          <b class="w3-margin-left">Tech stacks:</b>
-          <ul class="ul-inline">
-            <li>Python.</li>
-            <li>ML Tool</li>
-            <li>Angular 2</li>
-            <li>Ultrasonic Sensor</li>
-          </ul>
-        </div>
-      </div>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Personal / Independent Project</h2>
-        <h6 class="w3-text-teal"><i class="fa  fa-fw w3-margin-right"></i><span class="w3-tag w3-teal w3-round">Inventory Management System</span></h6>
-        <div class="w3-container">
-          <h6 class="w3-text-teal"><i class="fa fa-circle fa-fw w3-margin-right"></i>Electronic goods stock management - Barcode Reader <i class="fa fa-git-square fa-fw w3-margin-right w3-large"></i></h6>
-          <p class="w3-margin-left">Developed an Inventory Management System using JavaFX, integrating a barcode reader for efficient stock tracking, placing orders and billing.</p>
-          <b class="w3-margin-left">Tech stacks:</b>
-          <ul class="ul-inline">
-            <li>Java.</li>
-            <li>JavaFx.</li>
-            <li>SQLite/MySQL</li>
-            <li>Barcode Scanner Integration</li>
-          </ul>
-        </div>
-        <div class="w3-container">
-          <h6 class="w3-text-teal"><i class="fa fa-circle fa-fw w3-margin-right"></i>JavaFx to Flutter Migration <i class="fa fa-git-square fa-fw w3-margin-right w3-large"></i></h6>
-          <p class="w3-margin-left">This project involves migrating an existing Inventory Management System originally developed in JavaFX to a Flutter-based cross-platform solution.</p>
-          <b class="w3-margin-left">Tech stacks:</b>
-          <ul class="ul-inline">
-            <li>Java.</li>
-            <li>Flutter.</li>
-            <li>SQLite/MySQL</li>
-            <li>Dart</li>
-            <li>Google Firebase</li>
-          </ul>
-        </div>
-      </div>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Pondicherry University</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2012 - 2016</h6>
-          <p>Bachelor's Degree - Electronics & Communication Engineering</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>GMSSS, Aberdeen, Port Blair</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2012</h6>
-          <p>Higher Secondary School</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>GSSS Subhashgram, North Andaman</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2001 - 2010</h6>
-          <p>Secondary School</p><br>
-        </div>
-      </div>
+    // Scroll progress bar
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      progress.style.width = scrolled + '%';
+    });
 
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-  <!-- End Page Container -->
-</div>
+    // Typing effect for role
+    const roles = ['Senior Software Developer', 'Portal Development Lead', 'Java & Spring Boot Engineer', 'Scalable Web Architect'];
+    const typed = document.getElementById('typed');
+    let r = 0, c = 0, deleting = false;
+    function type() {
+      const word = roles[r];
+      typed.textContent = word.substring(0, c);
+      if (!deleting && c < word.length) { c++; setTimeout(type, 70); }
+      else if (deleting && c > 0) { c--; setTimeout(type, 35); }
+      else {
+        if (!deleting) { deleting = true; setTimeout(type, 1600); }
+        else { deleting = false; r = (r + 1) % roles.length; setTimeout(type, 300); }
+      }
+    }
+    type();
 
-<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
- </footer>
-
+    // Reveal on scroll + skill bar fill
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          entry.target.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
-<style>
-li::marker {
-  color: teal;
-}
-.ul-inline {
-    display: flex;
-    gap: 30px;
-    font-size: small;
-}
-@media (max-width: 768px) {
-  .ul-inline {
-    display: inline-table;
-}
-}
-@media (max-width: 420px) {
-  .ul-inline {
-    display: inline-table;
-}
-}
-</style>
 </html>
