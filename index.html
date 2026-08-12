@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <style>
     :root {
@@ -507,51 +506,6 @@
       .reveal { opacity: 1; transform: none; }
     }
 
-    /* Loading state for download button */
-    .btn.is-loading { pointer-events: none; opacity: 0.7; }
-    .btn.is-loading i { animation: spin 0.8s linear infinite; }
-
-    /* ---------- Off-screen clean resume (for PDF export) ---------- */
-    #resume {
-      position: absolute;
-      left: -10000px;
-      top: 0;
-      width: 794px; /* ~A4 @96dpi */
-      background: #ffffff;
-      color: #1f2733;
-      font-family: "Inter", Arial, sans-serif;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-    #resume .r-inner { padding: 40px 46px; }
-    #resume .r-head { border-bottom: 3px solid #6d28d9; padding-bottom: 16px; margin-bottom: 18px; }
-    #resume .r-name { font-family: "Space Grotesk", Arial, sans-serif; font-size: 30px; font-weight: 700; color: #0f172a; letter-spacing: -0.5px; }
-    #resume .r-role { color: #7c3aed; font-weight: 600; font-size: 14px; margin-top: 2px; }
-    #resume .r-contact { margin-top: 10px; font-size: 11.5px; color: #475569; display: flex; flex-wrap: wrap; gap: 6px 18px; }
-    #resume .r-contact span { display: inline-flex; align-items: center; gap: 6px; }
-    #resume .r-contact i { color: #7c3aed; }
-    #resume .r-section { margin-top: 20px; page-break-inside: avoid; }
-    #resume .r-title {
-      font-family: "Space Grotesk", Arial, sans-serif;
-      font-size: 13.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
-      color: #6d28d9; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; margin-bottom: 10px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    #resume .r-job { margin-bottom: 14px; page-break-inside: avoid; }
-    #resume .r-job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-    #resume .r-job-title { font-weight: 700; color: #0f172a; font-size: 12.5px; }
-    #resume .r-date { color: #64748b; font-size: 11px; white-space: nowrap; }
-    #resume .r-sub { color: #475569; font-size: 11.5px; font-style: italic; margin: 1px 0 5px; }
-    #resume p.r-desc { margin: 4px 0; color: #334155; }
-    #resume ul.r-list { margin: 4px 0 4px; padding-left: 16px; }
-    #resume ul.r-list li { margin: 2px 0; color: #334155; }
-    #resume .r-label { font-weight: 700; color: #0f172a; font-size: 11.5px; margin-top: 6px; }
-    #resume .r-tech { color: #475569; font-size: 11px; margin-top: 2px; }
-    #resume .r-cols { display: flex; gap: 30px; }
-    #resume .r-cols > div { flex: 1; }
-    #resume .r-skill { margin: 3px 0; }
-    #resume .r-skill b { color: #0f172a; }
-    #resume .r-two { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
   </style>
 </head>
 <body>
@@ -583,7 +537,7 @@
     <p class="lead">Portal Development Lead building scalable, secure web platforms for global telecom & fintech products — from architecture and PoCs to performance tuning and delivery.</p>
     <div class="cta">
       <a class="btn btn-primary" href="mailto:sanjeetbiswas1995@gmail.com"><i class="fa-solid fa-paper-plane"></i> Get in touch</a>
-      <button class="btn btn-ghost" id="downloadResume" type="button"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</button>
+      <a class="btn btn-ghost" href="Sanjeet_Biswas_Resume.pdf" download="Sanjeet_Biswas_Resume.pdf"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
       <a class="btn btn-ghost" href="#experience"><i class="fa-solid fa-arrow-down"></i> Explore work</a>
     </div>
     <div class="hero-stats">
@@ -837,104 +791,6 @@
     <div class="copyright">© <span id="year"></span> Sanjeet Biswas — Crafted with a passion for clean, secure code.</div>
   </footer>
 
-  <!-- Off-screen clean resume used to generate the downloadable PDF -->
-  <div id="resume" aria-hidden="true">
-    <div class="r-inner">
-      <div class="r-head">
-        <div class="r-name">Sanjeet Biswas</div>
-        <div class="r-role">Senior Software Developer · Portal Development Lead</div>
-        <div class="r-contact">
-          <span><i class="fa-solid fa-envelope"></i> sanjeetbiswas1995@gmail.com</span>
-          <span><i class="fa-solid fa-phone"></i> +91 78429 94836</span>
-          <span><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</span>
-        </div>
-      </div>
-
-      <div class="r-section">
-        <div class="r-title"><i class="fa-solid fa-user"></i> Profile</div>
-        <p class="r-desc">Portal Development Lead with 8+ years of experience building scalable, secure web platforms for global telecom and fintech products. Expertise in Java 8+, Spring Boot and Angular, spanning architecture, PoCs, performance optimization, security hardening and delivery. Passionate about high-quality, secure and efficient applications.</p>
-      </div>
-
-      <div class="r-section">
-        <div class="r-title"><i class="fa-solid fa-suitcase"></i> Work Experience</div>
-
-        <div class="r-job">
-          <div class="r-job-head">
-            <span class="r-job-title">Senior Software Developer — Netcracker Technology</span>
-            <span class="r-date">Jun 2022 – Present</span>
-          </div>
-          <div class="r-sub">Client: Rakuten Group, Inc. (Tokyo, Japan)</div>
-          <p class="r-desc">Portal Development Lead delivering scalable web portals using Java 8+, Angular 2, Liferay, PostgreSQL and Wildfly. Owned requirement analysis, solution alignment, major change requests, performance tuning and team management.</p>
-          <div class="r-label">Key Contributions</div>
-          <ul class="r-list">
-            <li>Requirement analysis, feasibility checks, PoCs, estimations and delivery planning.</li>
-            <li>Solution alignment with cross-component teams and Solution Architects; CR design reviews with BA.</li>
-            <li>Major change request implementation, dev testing and defect troubleshooting.</li>
-            <li>Managed the portal dev team and Managed Services (MS) issues; load-testing analysis &amp; optimization.</li>
-            <li>Security: cookie signing for secure sessions; API request signing against tampering/replay attacks.</li>
-          </ul>
-          <div class="r-label">Projects</div>
-          <p class="r-tech">Self-Service Portal (e-commerce) · Ecare (dashboard management) · POS portal (shop representatives)</p>
-          <div class="r-label">Tech Stack</div>
-          <p class="r-tech">Java 8+ · Angular 2 · Liferay 7.4.3 · Wildfly 23 · PostgreSQL</p>
-        </div>
-
-        <div class="r-job">
-          <div class="r-job-head">
-            <span class="r-job-title">Software Developer — IBM India Pvt. Ltd.</span>
-            <span class="r-date">Mar 2017 – May 2022</span>
-          </div>
-          <div class="r-sub">Client: Federal Public Service Finance, Belgium</div>
-          <p class="r-desc">Java Developer for 5 years on EMCS (Excise Movement Control System), gaining strong hands-on experience across the Java enterprise stack, web services and databases.</p>
-          <div class="r-label">Tech Stack</div>
-          <p class="r-tech">Core Java · JPA · Hibernate · JSP · JAX-WS/SOAP · RESTful API · Oracle WebLogic · Oracle · IBM DB2 · MongoDB · MySQL · SAX/STAX/DOM · Log4j · SOAP UI</p>
-        </div>
-      </div>
-
-      <div class="r-section">
-        <div class="r-title"><i class="fa-solid fa-flask"></i> R&amp;D · Innovations · PoCs</div>
-        <ul class="r-list">
-          <li><b>Single Sign-On</b> between Netcracker &amp; Rakuten e-commerce portal with token-based auth, session management and MFA (OTP via phone/email).</li>
-          <li><b>Universal Links</b> for Android/iOS — deep-link into the Rakuten mobile app with browser fallback (Java Filters, AASA file).</li>
-          <li><b>CMS PoC</b> for email/SMS templates, localizations and carousels (Kafka Topics, Liferay Web Content, PostgreSQL, RESTful API).</li>
-        </ul>
-      </div>
-
-      <div class="r-section">
-        <div class="r-title"><i class="fa-solid fa-trophy"></i> Hackathons &amp; Projects</div>
-        <ul class="r-list">
-          <li><b>WhatsApp E-commerce Onboarding Chatbot</b> (AI Hackathon) — Meta Webhooks automating registration, orders and support (Python, Django, ML profiling).</li>
-          <li><b>AI/ML Parking Allotment System</b> — real-time availability prediction with instant notifications (Python, ML, Angular 2, ultrasonic sensors).</li>
-          <li><b>Inventory Management System</b> — JavaFX app with barcode scanning for stock, orders and billing; migrating to Flutter/Firebase.</li>
-        </ul>
-      </div>
-
-      <div class="r-section">
-        <div class="r-title"><i class="fa-solid fa-bolt"></i> Skills</div>
-        <div class="r-two">
-          <div class="r-skill"><b>Languages/Frameworks:</b> Java 8+, Spring Boot, Angular 2, TypeScript, JavaFX</div>
-          <div class="r-skill"><b>Databases:</b> PostgreSQL, Oracle, MongoDB, SQLite, MySQL, DB2</div>
-          <div class="r-skill"><b>Messaging/DevOps:</b> Kafka, RabbitMQ, Docker, Kubernetes</div>
-          <div class="r-skill"><b>Styling:</b> LESS / CSS</div>
-          <div class="r-skill"><b>Learning:</b> Django/Python, Flutter/Dart/Firebase, Flowise AI</div>
-          <div class="r-skill"><b>Languages:</b> English, Hindi</div>
-        </div>
-      </div>
-
-      <div class="r-section">
-        <div class="r-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
-        <div class="r-job-head">
-          <span class="r-job-title">B.E. — Electronics &amp; Communication Engineering, Pondicherry University</span>
-          <span class="r-date">2012 – 2016</span>
-        </div>
-        <div class="r-job-head" style="margin-top:4px;">
-          <span class="r-job-title">Higher Secondary — GMSSS, Aberdeen, Port Blair</span>
-          <span class="r-date">2010 – 2012</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -981,35 +837,6 @@
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // Download resume as PDF
-    const dlBtn = document.getElementById('downloadResume');
-    dlBtn.addEventListener('click', () => {
-      const original = dlBtn.innerHTML;
-      dlBtn.classList.add('is-loading');
-      dlBtn.innerHTML = '<i class="fa-solid fa-spinner"></i> Generating…';
-
-      const el = document.getElementById('resume');
-      const opt = {
-        margin: 0,
-        filename: 'Sanjeet_Biswas_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
-        jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['css', 'legacy'] }
-      };
-
-      html2pdf().set(opt).from(el).save()
-        .then(() => {
-          dlBtn.classList.remove('is-loading');
-          dlBtn.innerHTML = '<i class="fa-solid fa-check"></i> Downloaded';
-          setTimeout(() => { dlBtn.innerHTML = original; }, 2200);
-        })
-        .catch(() => {
-          dlBtn.classList.remove('is-loading');
-          dlBtn.innerHTML = original;
-          alert('Sorry, the resume could not be generated. Please try again.');
-        });
-    });
   </script>
 </body>
 </html>
