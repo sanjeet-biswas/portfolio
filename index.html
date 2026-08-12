@@ -355,20 +355,22 @@
     }
     .side-title i { color: var(--cyan); }
 
-    /* ---------- Skill bars ---------- */
-    .skill { margin-bottom: 15px; text-align: left; }
-    .skill .row { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px; color: var(--muted); }
-    .skill .track {
-      height: 7px; border-radius: 100px;
-      background: rgba(255,255,255,0.06);
-      overflow: hidden;
+    /* ---------- Skill tags ---------- */
+    .skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      padding: 7px 11px;
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.35;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
     }
-    .skill .fill {
-      height: 100%; width: 0;
-      border-radius: 100px;
-      background: var(--accent-grad);
-      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-      box-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+    .skill-tag:hover {
+      color: var(--text);
+      border-color: rgba(34, 211, 238, 0.35);
+      background: rgba(34, 211, 238, 0.07);
     }
 
     /* ---------- Timeline / experience ---------- */
@@ -575,32 +577,42 @@
           <div class="divider"></div>
 
           <div class="side-title"><i class="fa-solid fa-bolt"></i> Core Skills</div>
-          <div data-skills>
-            <div class="skill"><div class="row"><span>Java 8+</span><span>92%</span></div><div class="track"><div class="fill" data-w="92"></div></div></div>
-            <div class="skill"><div class="row"><span>Spring Boot</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
-            <div class="skill"><div class="row"><span>Angular 2 · TypeScript</span><span>60%</span></div><div class="track"><div class="fill" data-w="60"></div></div></div>
-            <div class="skill"><div class="row"><span>Styling · LESS/CSS</span><span>40%</span></div><div class="track"><div class="fill" data-w="40"></div></div></div>
-            <div class="skill"><div class="row"><span>JavaFX</span><span>50%</span></div><div class="track"><div class="fill" data-w="50"></div></div></div>
-            <div class="skill"><div class="row"><span>SQLite · PostgreSQL · Oracle · MongoDB</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
-            <div class="skill"><div class="row"><span>Docker · Kubernetes</span><span>30%</span></div><div class="track"><div class="fill" data-w="30"></div></div></div>
-            <div class="skill"><div class="row"><span>Kafka · RabbitMQ</span><span>40%</span></div><div class="track"><div class="fill" data-w="40"></div></div></div>
+          <div class="skill-list">
+            <span class="skill-tag">Java 8+</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Angular 2</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">LESS / CSS</span>
+            <span class="skill-tag">JavaFX</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Oracle</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">RabbitMQ</span>
           </div>
 
           <div class="divider"></div>
 
-          <div class="side-title"><i class="fa-solid fa-seedling"></i> Currently Learning</div>
-          <div data-skills>
-            <div class="skill"><div class="row"><span>Django · Python</span><span>20%</span></div><div class="track"><div class="fill" data-w="20"></div></div></div>
-            <div class="skill"><div class="row"><span>Flutter · Dart · Firebase</span><span>5%</span></div><div class="track"><div class="fill" data-w="5"></div></div></div>
-            <div class="skill"><div class="row"><span>Flowise AI · render.com</span><span>2%</span></div><div class="track"><div class="fill" data-w="2"></div></div></div>
+          <div class="side-title"><i class="fa-solid fa-seedling"></i> Currently Exploring</div>
+          <div class="skill-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">Flowise AI</span>
+            <span class="skill-tag">Render</span>
           </div>
 
           <div class="divider"></div>
 
           <div class="side-title"><i class="fa-solid fa-language"></i> Languages</div>
-          <div data-skills>
-            <div class="skill"><div class="row"><span>English</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
-            <div class="skill"><div class="row"><span>Hindi</span><span>80%</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+          <div class="skill-list">
+            <span class="skill-tag">English</span>
+            <span class="skill-tag">Hindi</span>
           </div>
         </aside>
 
@@ -823,12 +835,11 @@
     }
     type();
 
-    // Reveal on scroll + skill bar fill
+    // Reveal elements on scroll
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
-          entry.target.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
           io.unobserve(entry.target);
         }
       });
