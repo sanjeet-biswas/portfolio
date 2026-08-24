@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Sanjeet Biswas &#8212; Senior Software Developer and AI Engineer</title>
+  <desc id="desc">Social preview for Sanjeet Biswas's software engineering portfolio.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.55" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="0" cy="0" r="1" gradientTransform="translate(170 110) rotate(35) scale(600 470)">
+      <stop stop-color="#22d3ee" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientTransform="translate(1050 130) rotate(145) scale(620 500)">
+      <stop stop-color="#8b5cf6" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#7890c0" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#05060a"/>
+  <rect width="1200" height="630" fill="url(#cyanGlow)"/>
+  <rect width="1200" height="630" fill="url(#violetGlow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <rect x="72" y="68" width="92" height="46" rx="23" fill="#121622" fill-opacity="0.9" stroke="#7890c0" stroke-opacity="0.25"/>
+  <text x="118" y="99" text-anchor="middle" fill="#22d3ee" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">SB.</text>
+
+  <text x="72" y="248" fill="#e7ecf5" font-family="Arial, sans-serif" font-size="72" font-weight="700">Sanjeet</text>
+  <text x="342" y="248" fill="url(#accent)" font-family="Arial, sans-serif" font-size="72" font-weight="700">Biswas</text>
+
+  <text x="76" y="304" fill="#b9c3d6" font-family="Arial, sans-serif" font-size="29" font-weight="500">Senior Software Developer &#183; Portal Development Lead</text>
+  <text x="76" y="352" fill="#8f9bb2" font-family="Arial, sans-serif" font-size="23">Building scalable enterprise platforms and AI-powered solutions</text>
+
+  <g transform="translate(72 406)" font-family="Arial, sans-serif" font-size="18" font-weight="600">
+    <rect width="112" height="42" rx="21" fill="#121622" stroke="#22d3ee" stroke-opacity="0.45"/>
+    <text x="56" y="27" text-anchor="middle" fill="#bceef5">Java</text>
+    <rect x="128" width="154" height="42" rx="21" fill="#121622" stroke="#8b5cf6" stroke-opacity="0.45"/>
+    <text x="205" y="27" text-anchor="middle" fill="#d8ccff">Spring Boot</text>
+    <rect x="298" width="108" height="42" rx="21" fill="#121622" stroke="#ec4899" stroke-opacity="0.45"/>
+    <text x="352" y="27" text-anchor="middle" fill="#f5c3dc">Angular</text>
+    <rect x="422" width="104" height="42" rx="21" fill="#121622" stroke="#22d3ee" stroke-opacity="0.45"/>
+    <text x="474" y="27" text-anchor="middle" fill="#bceef5">RAG</text>
+    <rect x="542" width="182" height="42" rx="21" fill="#121622" stroke="#8b5cf6" stroke-opacity="0.45"/>
+    <text x="633" y="27" text-anchor="middle" fill="#d8ccff">Generative AI</text>
+  </g>
+
+  <rect x="72" y="527" width="1056" height="1" fill="url(#accent)" opacity="0.65"/>
+  <text x="72" y="572" fill="#7f8ba1" font-family="Arial, sans-serif" font-size="20">sanjeet-biswas.github.io/portfolio</text>
+  <text x="1128" y="572" text-anchor="end" fill="#7f8ba1" font-family="Arial, sans-serif" font-size="20">Bangalore, India</text>
+</svg>
