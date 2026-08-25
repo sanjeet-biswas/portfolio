@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /resume.html
+Disallow: /portfolio/resume.html
 
 Sitemap: https://sanjeet-biswas.github.io/portfolio/sitemap.xml
