@@ -568,6 +568,111 @@
     .exp h3 { font-family: "Space Grotesk", sans-serif; margin: 0 0 4px; font-size: 1.1rem; color: var(--text); }
     .exp .meta { color: var(--cyan); font-size: 0.85rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .exp p { color: var(--muted); font-size: 0.94rem; margin: 8px 0; }
+    .experience-client {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0 20px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .experience-client i { color: var(--cyan); }
+    .experience-client strong { color: var(--text); }
+    .experience-projects {
+      margin: 10px 0 20px;
+      border-top: 1px solid var(--panel-border);
+      border-bottom: 1px solid var(--panel-border);
+    }
+    .experience-project {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      column-gap: 14px;
+      row-gap: 8px;
+      align-items: start;
+      padding: 18px 0;
+    }
+    .experience-project + .experience-project { border-top: 1px solid var(--panel-border); }
+    .project-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      color: #d8ccff;
+      background: rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .project-icon.commerce { color: #c4b5fd; background: rgba(124, 58, 237, 0.18); }
+    .project-icon.care { color: #86efac; background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.3); }
+    .project-icon.pos { color: #fde68a; background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); }
+    .project-heading h4 {
+      margin: 0 0 3px;
+      color: var(--text);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.95rem;
+    }
+    .project-role {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--cyan);
+      font-size: 0.76rem;
+    }
+    .experience-project .project-description {
+      margin: 0;
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+    .experience-project .project-details {
+      grid-column: 2;
+      padding-left: 18px;
+      border-left: 0;
+    }
+    .experience-project .project-details li { font-size: 0.82rem; margin: 4px 0; }
+    .experience-panels {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .experience-panel {
+      padding: 18px;
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+    .experience-panel h4 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 12px;
+      color: var(--text);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .experience-panel h4 i { color: var(--violet); }
+    .experience-panel ul.clean li { font-size: 0.83rem; margin: 5px 0; }
+    .experience-tech {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--panel-border);
+    }
+    .experience-tech > span {
+      padding-top: 5px;
+      color: var(--cyan);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .experience-tech .chips { margin-top: 0; }
 
     .badge {
       display: inline-block;
@@ -680,6 +785,11 @@
       .hero { padding: 60px 0 40px; }
       .hero-stats { gap: 26px; }
       .card { padding: 20px; }
+      .experience-project { grid-template-columns: 40px 1fr; column-gap: 12px; }
+      .experience-project .project-details { grid-column: 2; padding: 0 0 0 18px; border-top: 0; }
+      .experience-panels { grid-template-columns: 1fr; }
+      .experience-tech { display: block; }
+      .experience-tech .chips { margin-top: 10px; }
     }
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; scroll-behavior: auto; }
@@ -811,36 +921,102 @@
               <div class="meta"><i class="fa-regular fa-calendar"></i> June 2022 – <span class="badge">Present</span></div>
               <p>Lead portal development for a global telecom product organization, delivering scalable, secure web platforms with Java 8+, Angular 2, the Liferay framework, PostgreSQL and WildFly. I own solutions end to end — from requirement analysis and architecture through implementation, performance optimization and deployment — while mentoring the development team and ensuring consistent, high-quality delivery.</p>
 
-              <div class="sub"><i class="fa-solid fa-user-tie"></i>Client</div>
-              <ul class="clean"><li>Rakuten Group, Inc. — a Japanese technology conglomerate based in Tokyo.</li></ul>
+              <div class="experience-client">
+                <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                <strong>Client:</strong> Rakuten Group, Inc. — a Japanese technology conglomerate based in Tokyo.
+              </div>
 
               <div class="sub"><i class="fa-solid fa-diagram-project"></i>Projects</div>
-              <ul class="clean">
-                <li>Self-Service Portal — eCommerce Purchase.</li>
-                <li>Ecare — Product Management.</li>
-                <li>POS — CSR Shops.</li>
-                <li>TBAPI — Telecom Business API.</li>
-              </ul>
+              <div class="experience-projects">
+                <article class="experience-project">
+                  <div class="project-icon" aria-hidden="true">{API}</div>
+                  <div class="project-summary">
+                    <div class="project-heading">
+                      <h4>TBAPI — Telecom Business API</h4>
+                    </div>
+                    <span class="project-role">Role: Senior Developer / Technical Lead</span>
+                    <p class="project-description">Designed and implemented telecom business APIs that integrate the customer portal with downstream telecom services and product components.</p>
+                  </div>
+                  <ul class="clean project-details">
+                    <li>Designed and developed 50+ APIs for telecom product and service management, supporting 10+ downstream integrations.</li>
+                    <li>Collaborated with Solution Architects and cross-component teams to define API contracts, error handling and integration patterns.</li>
+                    <li>Implemented request signing, HTTPS and secure session handling to strengthen API security and data integrity.</li>
+                    <li>Performed performance analysis and load testing; optimized API latency by 30% under high load.</li>
+                  </ul>
+                </article>
+                <article class="experience-project">
+                  <div class="project-icon commerce" aria-hidden="true"><i class="fa-solid fa-cart-shopping"></i></div>
+                  <div class="project-summary">
+                    <div class="project-heading">
+                      <h4>Self-Service Portal — eCommerce</h4>
+                    </div>
+                    <p class="project-description">Led development of customer-facing portal capabilities enabling eCommerce purchase journeys and account management.</p>
+                  </div>
+                  <ul class="clean project-details">
+                    <li>Owned end-to-end delivery of portal features from requirements to production.</li>
+                    <li>Built responsive UI with Angular and Liferay; integrated backend services using Java and REST APIs.</li>
+                    <li>Improved page load performance by 25% through query optimization, caching and frontend enhancements.</li>
+                    <li>Ensured high availability and scalability on WildFly application server.</li>
+                  </ul>
+                </article>
+                <article class="experience-project">
+                  <div class="project-icon care" aria-hidden="true"><i class="fa-regular fa-clipboard"></i></div>
+                  <div class="project-summary">
+                    <div class="project-heading">
+                      <h4>Ecare — Product Management</h4>
+                    </div>
+                    <p class="project-description">Developed product management capabilities supporting telecom service configuration and lifecycle workflows.</p>
+                  </div>
+                  <ul class="clean project-details">
+                    <li>Implemented product onboarding, configuration and catalog management features.</li>
+                    <li>Translated business requirements into scalable technical solutions in collaboration with BAs and architects.</li>
+                    <li>Delivered major change requests and enhancements with thorough testing and impact analysis.</li>
+                  </ul>
+                </article>
+                <article class="experience-project">
+                  <div class="project-icon pos" aria-hidden="true"><i class="fa-solid fa-store"></i></div>
+                  <div class="project-summary">
+                    <div class="project-heading">
+                      <h4>POS — CSR Shops</h4>
+                    </div>
+                    <p class="project-description">Developed portal capabilities for CSR users to manage customer and product operations across retail outlets.</p>
+                  </div>
+                  <ul class="clean project-details">
+                    <li>Implemented CSR-facing workflows for product activation, recharge and account management.</li>
+                    <li>Integrated with backend services and ensured end-to-end validation and testing.</li>
+                    <li>Worked closely with stakeholders to refine requirements and deliver user-centric solutions.</li>
+                  </ul>
+                </article>
+              </div>
 
-              <div class="sub"><i class="fa-solid fa-list-check"></i>Key Responsibilities</div>
-              <ul class="clean">
-                <li>Analyze new requirements, assess feasibility, and lead proofs of concept and effort estimation.</li>
-                <li>Align technical solutions with cross-component teams and Solution Architects.</li>
-                <li>Review change request designs with Business Analysts and implement major changes with thorough developer testing.</li>
-                <li>Track, triage and resolve defects across the portal, and manage Managed Services (MS) issues.</li>
-                <li>Lead and mentor the portal development team, assigning requirements and defects.</li>
-                <li>Analyze load-testing results to drive performance optimization and delivery planning.</li>
-              </ul>
+              <div class="experience-panels">
+                <div class="experience-panel">
+                  <h4><i class="fa-solid fa-list-check" aria-hidden="true"></i>Engineering Leadership &amp; Delivery</h4>
+                  <ul class="clean">
+                    <li>Analyze new requirements, assess feasibility, and lead proofs of concept and effort estimation.</li>
+                    <li>Align technical solutions with cross-component teams and Solution Architects.</li>
+                    <li>Review change request designs with Business Analysts and implement major changes with thorough developer testing.</li>
+                    <li>Track, triage and resolve defects across the portal, and manage Managed Services (MS) issues.</li>
+                    <li>Lead and mentor the portal development team, assigning requirements and defects.</li>
+                    <li>Analyze load-testing results to drive performance optimization and delivery planning.</li>
+                  </ul>
+                </div>
 
-              <div class="sub"><i class="fa-solid fa-shield-halved"></i>Security Engineering</div>
-              <ul class="clean">
-                <li>Implemented cookie signing to secure session management.</li>
-                <li>Introduced API request signing to prevent tampering and replay attacks.</li>
-                <li>Implemented HTTP Strict Transport Security (HSTS) to enforce HTTPS and prevent protocol-downgrade attacks.</li>
-              </ul>
+                <div class="experience-panel">
+                  <h4><i class="fa-solid fa-shield-halved" aria-hidden="true"></i>Security Engineering</h4>
+                  <ul class="clean">
+                    <li>Implemented cookie signing to secure session management.</li>
+                    <li>Introduced API request signing to prevent tampering and replay attacks.</li>
+                    <li>Implemented HTTP Strict Transport Security (HSTS) to enforce HTTPS and prevent protocol-downgrade attacks.</li>
+                  </ul>
+                </div>
+              </div>
 
-              <div class="chips">
-                <span class="chip">Java 8+</span><span class="chip">Angular 2</span><span class="chip">Liferay 7.4.3</span><span class="chip">Wildfly 23</span><span class="chip">PostgreSQL</span><span class="chip">Apache Camel</span><span class="chip">RabbitMQ</span>
+              <div class="experience-tech">
+                <span><i class="fa-solid fa-display" aria-hidden="true"></i> Technologies</span>
+                <div class="chips">
+                  <span class="chip">Java 8+</span><span class="chip">Angular 2</span><span class="chip">Liferay 7.4.3</span><span class="chip">WildFly 23</span><span class="chip">PostgreSQL</span><span class="chip">Apache Camel</span><span class="chip">RabbitMQ</span>
+                </div>
               </div>
             </div>
 
@@ -848,7 +1024,7 @@
               <span class="node"></span>
               <h3>Software Developer @ IBM India Pvt. Ltd.</h3>
               <div class="meta"><i class="fa-regular fa-calendar"></i> Mar 2017 – May 2022</div>
-              <p>Spent five years as a Java Developer building and maintaining enterprise applications for a European government client. Gained deep, hands-on experience across the full Java stack — web services, ORM frameworks, XML processing and relational databases — while delivering production features and resolving defects in a large-scale system.</p>
+              <p>Developed and maintained the Excise Movement Control System (EMCS) for Belgium's Federal Public Service Finance. Delivered production features and defect fixes across Java, JPA and Hibernate modules, SOAP and REST services, XML processing with JAXB, SAX, StAX and DOM, and Oracle and IBM DB2 persistence deployed on Oracle WebLogic.</p>
 
               <div class="sub"><i class="fa-solid fa-user-tie"></i>Client</div>
               <ul class="clean"><li>Federal Public Service Finance, Belgium.</li></ul>
@@ -857,7 +1033,7 @@
               <ul class="clean"><li>EMCS — Excise Movement Control System.</li></ul>
 
               <div class="chips">
-                <span class="chip">Core Java</span><span class="chip">DDL · DML · TCL</span><span class="chip">Oracle WebLogic</span><span class="chip">Oracle</span><span class="chip">IBM DB2</span><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">JPA · Hibernate</span><span class="chip">JSP</span><span class="chip">JAX-B · SAX · STAX · DOM</span><span class="chip">JAX-WS · SOAP</span><span class="chip">RESTful API</span><span class="chip">SOAP UI</span><span class="chip">WinSCP · Putty</span><span class="chip">Log4j</span>
+                <span class="chip">Core Java</span><span class="chip">Oracle WebLogic</span><span class="chip">Oracle</span><span class="chip">IBM DB2</span><span class="chip">JPA · Hibernate</span><span class="chip">JAXB · SAX · StAX · DOM</span><span class="chip">JAX-WS · SOAP</span><span class="chip">REST APIs</span>
               </div>
             </div>
           </div>
